@@ -7,11 +7,11 @@ import pandas as pd
 from google.cloud import storage
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'aruna'
 
 # Google Cloud Storage Configuration
-GCS_BUCKET_NAME = 'your-gcs-bucket-name'
-GCS_PROJECT_ID = 'your-project-id'
+GCS_BUCKET_NAME = 'aruna-bucket-ad'
+GCS_PROJECT_ID = 'absolute-cache-408003'
 
 storage_client = storage.Client(project=GCS_PROJECT_ID)
 
