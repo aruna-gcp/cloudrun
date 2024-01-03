@@ -32,12 +32,12 @@ def upload_file():
         timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         filename_with_timestamp = f"{timestamp}_{filename}"
 
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename_with_timestamp))
+        file.save(os.path.join('/tmp', filename_with_timestamp))
 
         # Upload to Google Cloud Storage
         bucket = storage_client.get_bucket(GCS_BUCKET_NAME)
         blob = bucket.blob(filename_with_timestamp)
-        blob.upload_from_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename_with_timestamp))
+        blob.upload_from_filename(os.path.join('/tmp', filename_with_timestamp))
 
         return redirect(url_for('success'))
 
